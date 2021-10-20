@@ -36,25 +36,12 @@ def devolver_product(id):
 	print(f"buscando producto {id} en bd")
 	return {"nombre": "xxx", "id": id}
 
-@app.route("/producto/crear", methods=["post"])
+@app.route("/producto/crear", methods={"post"})
 def crear_producto():
 	codigo = request.form.get("codigo")
 	nombre = request.form.get("nombre")
 	print(f"creando producto {codigo}-{nombre} en la bd")
 	return {"status": "OK"}
-
-@app.route("/producto/editar/<id>", methods=["put"])
-def editar_producto(id):
-        codigo = request.form.get("codigo")
-        nombre = request.form.get("nombre")
-        print(f"editando producto {id}{codigo}-{nombre} en la bd")
-        return {"status": "OK"}
-
-@app.route("/producto/borrar/<id>", methods=["delete"])
-def borrar_producto(id):
-        print(f"borrando producto {id}en la bd")
-        return {"status": "OK"}
-
 
 
 if __name__ == '__main__':
