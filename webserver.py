@@ -4,16 +4,14 @@ from flask import render_template
 
 app = Flask(__name__)
 
-@app.route("/", methods=['get', 'post'])
-def hello_world():
-	#nombre = request.args.get("nombre")
-	#edad = request.args.get('edad')
+@app.route("/inicio", methods=['get', 'post'])
+def form():
 	nombre = request.form.get("nombre")
 	edad = request.form.get('edad')
-	return f"<h1>Bienvenido {nombre}</h1><h2>Ud tiene {edad} años</h2>"
+	return render_template("Bienvenido.html", nombre=nombre, edad=edad)
 
-@app.route("/form") 
-def form():
+@app.route("/") 
+def bienvenido():
 	return render_template("form.html")
 
 
