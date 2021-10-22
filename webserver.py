@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 @app.route("/") 
 def bienvenido():
-	return "pagina de inicio"
+	return "pagina de arranque"
 
 @app.route("/servicio")
 def servicio_ai():
